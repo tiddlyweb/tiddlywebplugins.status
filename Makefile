@@ -10,6 +10,7 @@ clean:
 	rm -r build || true
 	rm -r *.egg-info || true
 	rm -r store || true
+	rm tiddlyweb.log || true
 
 test: 
 	py.test -x test
