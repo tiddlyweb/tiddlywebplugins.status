@@ -40,6 +40,7 @@ def setup_module(module):
 def test_simple_status():
     response, content = http.request('http://0.0.0.0:8080/status')
     assert response['status'] == '200'
+    assert 'application/json' in response['content-type']
     info = simplejson.loads(content)
 
     assert info['username'] == 'GUEST'
@@ -61,4 +62,11 @@ def test_with_user_status():
     info = simplejson.loads(content)
     assert info['username'] == 'apple'
 
-# javascript
+def test_status_as_javascript():
+    response, content = http.request('http://0.0.0.0:8080/status.js')
+    assert response['status'] == '200'
+    assert 'text/javascript' in response['content-type']
+
+    assert '"username": "GUEST"' in content
+    assert '"version": "%s"' % VERSION in content
+    assert 'var tiddlyweb = tiddlyweb || {}' in content
