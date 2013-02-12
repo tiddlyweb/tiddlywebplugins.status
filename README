@@ -1,17 +1,31 @@
 
-status is a TiddlyWeb plugins which gives a JSON report on
-the current state of the server including:
+Intro
+=====
+
+tiddlywebplugins.status is a [TiddlyWeb](http://tiddlyweb.com)
+plugin which gives a JSON or JavaScript report on the current
+state of the TiddlyWeb server including:
 
 * current user
 * TiddlyWeb version
 * available challengers
 
-Other information that may be considered for future versions:
+Other plugins can override the data gathering mechanisms to add
+additional information such as:
 
 * store being used
 * available serializations
 * available extractors
 
+[TiddlySpace](https://github.com/tiddlyspace/tiddlyspace) is an
+example plugin that extends the capabilities.
+
 For more information on TiddlyWeb see http://tiddlyweb.com
 
-For installation instructions run 'pydoc tiddlywebplugins.status'.
+Installation
+============
+
+To install from PyPI, run `pip install -U tiddlywebplugins.status`.
+
+After installation to get configuration guidelines run
+`pydoc tiddlywebplugins.status`.
