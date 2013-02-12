@@ -17,4 +17,4 @@ setup(
         platforms = 'Posix; MacOS X; Windows',
         install_requires = ['tiddlyweb'],
         zip_safe = False,
-        )
+)
