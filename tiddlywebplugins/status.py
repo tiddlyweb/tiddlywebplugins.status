@@ -50,7 +50,7 @@ def status(environ, start_response):
     data = _gather_data(environ)
     output = json.dumps(data)
     start_response('200 OK', [
-        ('Cache-Control', 'no-cache'),
+        ('Cache-Control', 'no-store'),
         ('Content-Type', 'application/json')
     ])
     return [output]
@@ -65,7 +65,7 @@ def status_js(environ, start_response):
     output = ('var tiddlyweb = tiddlyweb || {};\ntiddlyweb.status = %s;' %
             json.dumps(data))
     start_response('200 OK', [
-        ('Cache-Control', 'no-cache'),
+        ('Cache-Control', 'no-store'),
         ('Content-Type', 'text/javascript')
     ])
     return [output]

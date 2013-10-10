@@ -58,6 +58,7 @@ def test_with_user_status():
     response, content = http.request('http://0.0.0.0:8080/status',
             headers = {'Authorization': 'Basic %s' % authorization})
     assert response['status'] == '200'
+    assert 'no-store' in response['cache-control']
 
     info = simplejson.loads(content)
     assert info['username'] == 'apple'
