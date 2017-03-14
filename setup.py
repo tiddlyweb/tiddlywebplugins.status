@@ -9,7 +9,7 @@ setup(
         name = 'tiddlywebplugins.status',
         version = VERSION,
         description = 'A TiddlyWeb plugin that provides information on the current user.',
-        long_description=file(os.path.join(os.path.dirname(__file__), 'README')).read(),
+        long_description=open(os.path.join(os.path.dirname(__file__), 'README')).read(),
         author = 'Chris Dent',
         url = 'http://pypi.python.org/pypi/tiddlywebplugins.status',
         packages = find_packages(exclude=['test']),
